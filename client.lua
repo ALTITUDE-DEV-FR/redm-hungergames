@@ -1,6 +1,6 @@
 Citizen.CreateThread(function()
 
-    mstime = 8500 -- Temps d'une partie 6500 = 6.5s
+    mstime = 8500 -- Time for a minigame launched
 
     while true do
 
@@ -21,8 +21,8 @@ Citizen.CreateThread(function()
 
         Citizen.Wait(0)
 
- 		local coords    = GetEntityCoords(PlayerPedId(),true,true) -- Coordinates Player
-        local CenterMap = vector3(-1781.44, -488.32, 164.11)
+ 		local coords    = GetEntityCoords(PlayerPedId(),true,true) -- PlayerCoords
+        local CenterMap = vector3(-1781.44, -488.32, 164.11)       -- CenterMap finalPoint
 
         if mstime > 6500 and mstime <= 8500 then
             marketside = 1250.0 - 16.2
@@ -37,9 +37,9 @@ Citizen.CreateThread(function()
             0,
             0,
             0,
-            2500.0, -- longeur
-            2500.0, -- largeur
-            600.0, -- Hauteur
+            2500.0,     -- l
+            2500.0,     -- L
+            600.0,      -- H
             255,255,155,255,0, 0, 2, 0, 0, 0, 0)
             mstime = mstime - 1
         end
@@ -57,9 +57,9 @@ Citizen.CreateThread(function()
             0,
             0,
             0,
-            2000.0, -- longeur
-            2000.0, -- largeur
-            600.0, -- Hauteur
+            2000.0,
+            2000.0, 
+            600.0, 
             255,255,155,255,0, 0, 2, 0, 0, 0, 0)
             mstime = mstime - 1
 
@@ -82,9 +82,9 @@ Citizen.CreateThread(function()
             0,
             0,
             0,
-            1500.0, -- longeur
-            1500.0, -- largeur
-            600.0, -- Hauteur
+            1500.0, 
+            1500.0, 
+            600.0,
             255,255,155,255,0, 0, 2, 0, 0, 0, 0)
             mstime = mstime - 1
             if not TwoMarker then 
@@ -106,9 +106,9 @@ Citizen.CreateThread(function()
             0,
             0,
             0,
-            900.0, -- longeur
-            900.0, -- largeur
-            600.0, -- Hauteur
+            900.0, 
+            900.0, 
+            600.0, 
             255,255,155,255,0, 0, 2, 0, 0, 0, 0)
             mstime = mstime - 1
             if not TreeMarker then 
@@ -130,9 +130,9 @@ Citizen.CreateThread(function()
             0,
             0,
             0,
-            0.0, -- longeur
-            0.0, -- largeur
-            600.0, -- Hauteur
+            0.0, 
+            0.0, 
+            600.0,
             255,255,155,255,0, 0, 2, 0, 0, 0, 0)
             mstime = mstime - 1
             finish = true
@@ -147,9 +147,10 @@ Citizen.CreateThread(function()
             tickDeg = true
             OutSideMarker()
         end
-   
+            
  	end
 end)
+
 
 function OutSideMarker()
     print('[HUNGER_GAMES] ^1INFECTED')
